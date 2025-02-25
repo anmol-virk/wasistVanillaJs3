@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <label for="bookName">Enter your favorite book list:</label>
+  <textarea id="bookName" rows="5" cols="50"></textarea>
+  <button id="displayBtn">Display Book List</button>
+  <p id="bookResult"></p>
+
+  <label for="recipeName">Enter a recipe:</label>
+  <textarea id="recipeName" rows="5" cols="50"></textarea>
+  <button id="recipedisplayBtn">Display Recipe</button>
+  <p id="recipeResult"></p>
+
+  <label for="myName">Enter your Personal Bio:</label>
+  <textarea id="myName" rows="5" cols="50"></textarea>
+  <button id="nameBtn">Display Bio</button>
+  <p id="nameResult"></p>
+
+  <label for="yourGoal">Enter your list of Goals:</label>
+  <textarea id="yourGoal" rows="5" cols="50"></textarea>
+  <button id="goalBtn">Display Goals</button>
+  <p id="goalResult"></p>
+
+  <label for="yourStory">Enter a short story or anecdote:</label>
+  <textarea id="yourStory" rows="5" cols="50"></textarea>
+  <button id="storyBtn">Display Story</button>
+  <p id="storyResult"></p>
+
+  <script>
+
+    const bookName = document.getElementById("bookName")
+    const displayBtn = document.getElementById("displayBtn")
+    const bookResult = document.getElementById("bookResult")
+
+    displayBtn.addEventListener("click", function(){
+
+      const names = bookName.value
+      bookResult.textContent = `Your favorite books: ${names}`
+    })
+
+    const recipeName = document.getElementById("recipeName")
+    const recipedisplayBtn = document.getElementById("recipedisplayBtn")
+    const recipeResult = document.getElementById("recipeResult")
+
+    recipedisplayBtn.addEventListener("click", function(){
+
+      const recipe = recipeName.value
+      const recipee = recipe.split("\n\n")
+        console.log(recipee)
+     recipeResult.innerHTML = `<p><strong>Ingredients: </strong>${recipee[0]}</p>
+      <p><strong>Instructions: </strong>${recipee[1]}</p>`
+      
+       
+      
+    })
+
+
+    const myName = document.getElementById("myName")
+    const nameBtn = document.getElementById("nameBtn")
+    const nameResult = document.getElementById("nameResult")
+
+    nameBtn.addEventListener("click", function(){
+
+      const myData = myName.value
+      nameResult.textContent = `Your personal Bio: ${myData}`
+    })
+
+    const yourGoal = document.getElementById("yourGoal")
+    const goalBtn = document.getElementById("goalBtn")
+    const goalResult = document.getElementById("goalResult")
+
+    goalBtn.addEventListener("click", function(){
+
+      const goals = yourGoal.value
+      goalResult.textContent = `Your list of Goals: ${goals}`
+    })
+
+    const yourStory = document.getElementById("yourStory")
+    const storyBtn = document.getElementById("storyBtn")
+    const storyResult = document.getElementById("storyResult")
+
+    storyBtn.addEventListener("click", function(){
+
+      const story = yourStory.value
+      storyResult.textContent = `Your short story or anecdote: ${story}`
+    })
+    
+  </script>
+  
+</body>
+
+</html>
